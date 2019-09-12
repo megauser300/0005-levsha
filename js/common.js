@@ -84,20 +84,13 @@ function tabscostume(tab) {
 		$('.tabs').easyResponsiveTabs({
 			width: '768px', 
 		})
-		// 	$(this).closest('.tabs').find('.tabs__content').eq($(this).index())
-		// 	.find(".tabs__content-inner").before('<div class="tabs__content-toggle" >'+ $(this).text()+'</div>');
-		// })
-	// tabscostume("tabs");
-	// $(".tabs__content-toggle").click(function(){
-	// 	$(this).toggleClass("active").next().slideToggle().parent().siblings().find('.tabs__content-inner').slideUp().prev().removeClass("active");
-	// 	// $(this).parent().closest('.tabs').find('.tabs__btn').eq($(this).index()).click()
-	// })
+ 
 
 	$(".tbody-price").each(function(){
 		if($(this).find("tr").length > 6) {
 			$(this).parents("table").after('<div class="link-more-js" ><span>Показать прайс полностью</span></div>');
 			// console.log($(this).find("tr").length)
-			$(".link-more-js ").on('click',"span", function(){
+			$(document).on('click',".link-more-js span", function(){
 				$(this).hide().parents(".tabs__content.active").find("tr:hidden").slideToggle();
 		
 			})
